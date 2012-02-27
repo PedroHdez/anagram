@@ -22,10 +22,9 @@ end
 
 
 def signature_of(word)
-  word.unpack("c*").sort.pack("c*")
+  word.unpack("c*").sort.pack("c*") #desempaquetar la cadena segun el formato especificado, en este caso en caracteres
 end
 
-=begin
 signatures = Hash.new { |h,k| h[k] = [] }
 File.foreach(dictionary) do |line|
   word = line.chomp
@@ -42,4 +41,3 @@ ARGV.each do |word|
     puts "No anagrams of '#{word}' found in #{dictionary}"
   end
 end
-=end
