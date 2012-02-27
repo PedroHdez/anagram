@@ -25,18 +25,18 @@ def signature_of(word)
   word.unpack("c*").sort.pack("c*") #desempaquetar la cadena segun el formato especificado, en este caso en caracteres
 end
 
-signatures = Hash.new { |h,k| h[k] = [] }
+signatures = Hash.new { |h,k| h[k] = [] } #creamos un hash tal que cada elemento del hash, si no está inicializado, se crea como se indica
 File.foreach(dictionary) do |line|
-  word = line.chomp
+  word = line.chomp #Quita el ultimo caracter solo si es el separador de linea (retorno de carro por defecto)
   signature = signature_of(word)
-  signatures[signature] << word
+  signatures[signature] << word #añadimos la palabra a su hash
 end
 
 
-ARGV.each do |word|
+ARGV.each do |word| #Todas las palabras restantes de la linea de comandos
   s = signature_of(word)
   if signatures[s].length != 0
-    puts "Anagrams of '#{word}': #{signatures[s].join(', ')}"
+    puts "Anagrams of '#{word}': #{signatures[s].join(', ')}" #Une las coincidencias por una , y un espacio
   else
     puts "No anagrams of '#{word}' found in #{dictionary}"
   end
