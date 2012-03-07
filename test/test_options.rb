@@ -25,7 +25,7 @@ class TestOptions < Test::Unit::TestCase
       assert_equal "mydict", opts.dictionary
     end
   end      
-  
+#Caso ficticio de error para guardar en una tercera rama  
   context "specifying words and no dictionary" do
     should "return the words" do
       opts = Anagram::Options.new(["word1", "word2"])
