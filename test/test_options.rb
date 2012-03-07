@@ -9,6 +9,7 @@
 require 'test/unit'
 require 'shoulda'
 require_relative '../lib/anagram/options'
+#añadimos una linea para pruebas de ramas
 
 class TestOptions < Test::Unit::TestCase
   
