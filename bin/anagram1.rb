@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 require 'optparse'
 
+
 dictionary = "/usr/share/dict/words"
 OptionParser.new do |opts| #El objeto opts es el objeto Parser
   opts.banner = "Usage: anagram [ options ] word ..."
